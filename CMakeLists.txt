@@ -17,26 +17,29 @@ endif()
 
 # ------------------------------------------------------------------------------
 
-project(ftxui-starter
+project(static
   LANGUAGES CXX
   VERSION 1.0.0
 )
 
-add_executable(ftxui-starter src/main.cpp)
-target_include_directories(ftxui-starter PRIVATE src)
+add_executable(static src/main.cpp)
+target_include_directories(static PRIVATE src)
 
-target_link_libraries(ftxui-starter
+target_link_libraries(static
   PRIVATE ftxui::screen
   PRIVATE ftxui::dom
   PRIVATE ftxui::component # Not needed for this example.
 )
 
 if (EMSCRIPTEN) 
+
+  string(APPEND CMAKE_CXX_FLAGS "-Wall -O3") 
+
   string(APPEND CMAKE_CXX_FLAGS " -s USE_PTHREADS") 
   string(APPEND CMAKE_EXE_LINKER_FLAGS " -s ASYNCIFY") 
   string(APPEND CMAKE_EXE_LINKER_FLAGS " -s PROXY_TO_PTHREAD") 
 
-  foreach(file "index.html" "run_webassembly.py")
+  foreach(file "index.html" "sw.js")
     configure_file("src/${file}" ${file})
   endforeach(file)
 endif() 
