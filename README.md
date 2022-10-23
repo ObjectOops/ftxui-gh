@@ -14,4 +14,4 @@ To Do:
 - ~~With node_modules.~~ NOPE
 - ~~With styles.~~
 - ~~Compiler flags.~~ CMAKE
-- Final.
+- ~~Final.~~
