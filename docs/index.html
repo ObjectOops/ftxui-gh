@@ -68,7 +68,8 @@
                 const resize_handler = () => {
                     const {cols, rows} = fit_addon.proposeDimensions();
                     term.resize(cols, rows);
-                    window.Module._ftxui_on_resize(cols, rows);
+                    // The resize function has not been implemented in FTXUI v3.0.0.
+                    // window.Module._ftxui_on_resize(cols, rows);
                 };
                 const resize_observer = new ResizeObserver(resize_handler);
                 resize_observer.observe(term_element);

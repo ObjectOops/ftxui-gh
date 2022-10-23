@@ -15,3 +15,4 @@ To Do:
 - ~~With styles.~~
 - ~~Compiler flags.~~ CMAKE
 - ~~Final.~~
+Note to Self: docs/index.html has been manually changed.
