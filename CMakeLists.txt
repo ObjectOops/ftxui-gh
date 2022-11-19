@@ -7,6 +7,7 @@ set(FETCHCONTENT_UPDATES_DISCONNECTED TRUE)
 FetchContent_Declare(ftxui
   GIT_REPOSITORY https://github.com/ArthurSonzogni/ftxui
   GIT_TAG v3.0.0
+  # GIT_TAG dfdbe1eecf0451e0da5420c4b9c39ecb415681ac
 )
 
 FetchContent_GetProperties(ftxui)
@@ -33,7 +34,8 @@ target_link_libraries(static
 
 if (EMSCRIPTEN) 
 
-  string(APPEND CMAKE_CXX_FLAGS "-Wall -O3") 
+  string(APPEND CMAKE_CXX_FLAGS " -Wall -std=c++17") 
+  # -O3 flag has to be specified in linking.
 
   string(APPEND CMAKE_CXX_FLAGS " -s USE_PTHREADS") 
   string(APPEND CMAKE_EXE_LINKER_FLAGS " -s ASYNCIFY") 

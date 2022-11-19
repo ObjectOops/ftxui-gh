@@ -1,0 +1,9 @@
+temp.txt
+versions.txt
+emsdk/
+build/
+docs/_deps/
+docs/CMakeFiles/
+docs/*.cmake
+docs/*.txt
+docs/Makefile
